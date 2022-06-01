@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "discord.js": "^13.7.0",
+    "discord.js-selfbot": "^12.0.2",
+    "express": "^4.18.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "name": "scaldtrollsxd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arikatsu/scaldtrollsXD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arikatsu/scaldtrollsXD/issues"
+  },
+  "homepage": "https://github.com/Arikatsu/scaldtrollsXD#readme",
+  "description": ""
+}
