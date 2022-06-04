@@ -31,7 +31,7 @@ module.exports = (client) => {
             return
         }
 
-        const args = message.content.slice(7).split(/ +/)
+        const args = message.content.slice(1).split(/ +/)
         const commandName = args.shift().toLowerCase()
 
         if (!commands[commandName]) {
