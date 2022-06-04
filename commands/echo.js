@@ -1,12 +1,8 @@
 const bl = require('../blacklist.json')
-// format = ["faggot","nigger","nigga"]
 
 module.exports = {
     callback: (message, ...args) => {
-        var string = ''
-        for (const arg of args) {
-            string = string + arg + " ";
-        }
+        var string = args.join(" ")
         let checker = false;
         var regex = new RegExp(bl.keys, "gi");
         if (string.match(regex)) {checker = true;}
