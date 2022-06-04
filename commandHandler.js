@@ -1,13 +1,13 @@
 const fs = require('fs');
 const getFiles = require('./get-files')
-const config = require('../config.json')
+const config = require('./config.json')
 
 module.exports = (client) => {
     const commands = {}
 
     const suffix = '.js'
 
-    const commandFiles = getFiles('../commands', suffix)
+    const commandFiles = getFiles('./commands', suffix)
     console.log(commandFiles)
 
     for (const command of commandFiles) {
