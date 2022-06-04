@@ -2,7 +2,7 @@ const db = require('quick.db');
 
 module.exports = {
     callback: (message, ...args) => {
-        var argument = args[0]
+        var argument = args[0].toLowerCase()
         var arr = args.slice(1);
         var str = arr.join(' ')
         if (!argument)
