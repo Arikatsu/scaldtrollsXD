@@ -5,7 +5,7 @@ module.exports = {
         var argument = args[0]
         var arr = args.slice(1);
         var str = arr.join(' ')
-        if (argument === '')
+        if (!argument)
         message.reply('add something')
         else if (db.has(argument) == true) {
             let filter = m => m.author.id === message.author.id
