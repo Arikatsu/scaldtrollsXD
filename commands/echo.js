@@ -1,4 +1,5 @@
 const bl = require('../blacklist.json')
+// format = ["faggot","nigger","nigga"]
 
 module.exports = {
     callback: (message, ...args) => {
@@ -7,14 +8,10 @@ module.exports = {
             string = string + arg + " ";
         }
         let checker = false;
-        var stringCheck = string.toLowerCase();
-        for (var i = 0; i <=bl.length; i++) {
-            if (stringCheck.includes(bl[i])) {
-                checker = true;
-            }
-        }
+        var regex = new RegExp(bl.keys, "gi");
+        if (string.match(regex)) {checker = true;}
         if (checker == true)
-        return message.reply("your message has blacklisted words")
+        return message.reply("your message contains blacklisted words")
         else {
             message.channel.send(string)
         }
