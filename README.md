@@ -3,5 +3,8 @@
 literally why did I make this 
 
 anyways- 
-- [ ] implement more commands like an actual help command (its already 3 am imma do it later)
+- [ ] help command
 - [ ] implement actual database stuff
+- [ ] more commands as to add depending on if i want
+- [ ] eventHandler
+- [ ] and random events
