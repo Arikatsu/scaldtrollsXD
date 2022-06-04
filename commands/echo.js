@@ -4,10 +4,11 @@ module.exports = {
     callback: (message, ...args) => {
         var string = args.join(" ")
         let checker = false;
-        var regex = new RegExp(bl.keys, "gi");
-        if (string.match(regex)) {checker = true;}
+        if (new RegExp(bl.join("|")).test(string)) {
+            checker = true;
+        }
         if (checker == true)
-        return message.reply("your message contains blacklisted words")
+        message.reply("your message contains blacklisted words")
         else {
             message.channel.send(string)
         }
