@@ -1,4 +1,4 @@
-const { Client, Intents } = require('discord.js-selfbot');
+const { Client, Intents } = require('discord.js');
 const client = new Client({intents: [
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
@@ -11,7 +11,7 @@ const db = require('quick.db');
 
 app.get('/', (req, res) => res.send('bot online'));
 
-app.listen(port, () => console.log(`Your app is listening a http://localhost:${port}`));
+app.listen(port, () => console.log(`Your app is listening at http://localhost:${port}`));
  
 client.on('ready', () => {
   let handler = require('./commandHandler')
