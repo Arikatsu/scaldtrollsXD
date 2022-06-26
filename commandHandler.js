@@ -22,12 +22,8 @@ module.exports = (client) => {
 
     console.log(commands)
 
-    client.on('message', (message) => {
-        if(message.author.bot || !message.content.startsWith(config.prefix) || message.author.id === '981288670587928586') {
-            return
-        }
-
-        if(!message.guild.me.hasPermission("SEND_MESSAGES")) {
+    client.on('messageCreate', (message) => {
+        if(message.author.bot || !message.content.startsWith(config.prefix)) {
             return
         }
 

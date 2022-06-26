@@ -7,7 +7,6 @@ const express = require('express')
 const app = express();
 const port = 3000;
 const config = require("./config.json");
-const db = require('quick.db');
 
 app.get('/', (req, res) => res.send('bot online'));
 

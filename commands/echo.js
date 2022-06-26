@@ -1,4 +1,4 @@
-const bl = require('../blacklist.json')
+const bl = require('../db/blacklist.json')
 
 module.exports = {
     callback: (message, ...args) => {
