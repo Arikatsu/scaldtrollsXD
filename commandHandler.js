@@ -23,12 +23,27 @@ module.exports = (client) => {
     console.log(commands)
 
     client.on('messageCreate', (message) => {
-        if(message.author.bot || !message.content.startsWith(config.prefix)) {
+        var args 
+        if(message.author.bot){
             return
         }
+        else if(message.content.startsWith(config.prefix)) {
+            args = message.content.slice(1).split(/ +/)
+        }
 
-        const args = message.content.slice(1).split(/ +/)
-        const commandName = args.shift().toLowerCase()
+        else if(message.content.endsWith(config.suffix)) {
+            args = message.content.slice(0, -1).split(/ +/)
+        }
+
+        var commandName
+        if (message.content.startsWith(config.prefix)) {
+            commandName = args.shift().toLowerCase()
+        }
+
+        else if (message.content.endsWith(config.suffix)) {
+            commandName = args[0]
+            args = args.slice(1)
+        }
 
         if (!commands[commandName]) {
             return
