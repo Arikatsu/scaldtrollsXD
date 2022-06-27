@@ -25,8 +25,13 @@ module.exports = {
             },
             {
               label: "Utility Commands",
-              description: "No one uses these",
+              description: "no one uses these",
               value: "fourth"
+            },
+            {
+              label: "Main Page",
+              description: "go back to the main page",
+              value: "main"
             }
           ])
       )
@@ -81,22 +86,27 @@ module.exports = {
 
       if (value == 'first') {
         embed.delete()
-        message.channel.send({ embeds: [embed1] })
+        embed = await message.channel.send({ embeds: [embed1], components: [row] })
         return
       }
       if (value == 'second') {
         embed.delete()
-        message.channel.send({ embeds: [embed2] })
+        embed = await message.channel.send({ embeds: [embed2], components: [row] })
         return
       }
       if (value == 'third') {
         embed.delete()
-        message.channel.send({ embeds: [embed3] })
+        embed = await message.channel.send({ embeds: [embed3], components: [row] })
         return
       }
       if (value == 'fourth') {
         embed.delete()
-        message.channel.send({ embeds: [embed4] })
+        embed = await message.channel.send({ embeds: [embed4], components: [row] })
+        return
+      }
+      if (value == 'main') {
+        embed.delete()
+        embed = await message.channel.send({ embeds: [helpEmbed], components: [row] })
         return
       }
     })
