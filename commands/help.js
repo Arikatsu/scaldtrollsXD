@@ -58,7 +58,7 @@ module.exports = {
       .setColor('RANDOM')
       .setTitle('NSFW Commands')
       .addFields(
-        { name: 'hentai', value: 'syntax: ?hentai `//sends random hentai`' },
+        { name: 'hentai', value: 'syntax: ?hentai `or` ?hentai <subreddit> `//sends random hentai or from a specific subreddit if specified`' },
         { name: 'sex', value: 'syntax: ?sex <mention user 1> <mention user 2> `//sends an hentai image with the profile pictures of the two users as the faces' }
       )
 
@@ -68,6 +68,7 @@ module.exports = {
       .addFields(
         { name: 'echo', value: 'syntax: ?echo <value> `//repeats your message`' },
         { name: '8ball', value: 'syntax: ?8ball <question> `//responds to you depending on the question`' },
+        { name: '8ball pick-', value: 'syntax: ?8ball pick- [array of choices] `//picks something from the choices given`'},
         { name: 'hi', value: 'syntax: ?hi `//wtf was wrong with me when i made that`' }
       )
 
