@@ -7,7 +7,7 @@ module.exports = {
     callback: async (message, ...args) => {
         const msg = await message.channel.send('working on it...')
 
-        if (message.guild.id == '878562477275750430') {
+        if (message.guild.id == '982669799928758313') {
             if (!message.channel.nsfw) {
                 msg.delete()
                 message.channel.send("Channel is not nsfw")
