@@ -24,7 +24,7 @@ module.exports = (client) => {
 
     client.on('messageCreate', (message) => {
         var args 
-        if(message.author.bot){
+        if(message.author.bot || !message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")){
             return
         }
         else if(message.content.startsWith(config.prefix)) {
