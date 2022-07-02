@@ -13,9 +13,23 @@ module.exports = {
             }
         }
 
-        const msg = await message.channel.send('fetching hentai...')
-        const image = await getImage(subreddit || hentai, 30)
-        msg.delete()
-        message.channel.send(image)
+        if (message.guild.id == '982669799928758313') {
+            if (!message.channel.nsfw) {
+                message.channel.send("Channel is not nsfw")
+            }
+            else {
+                getNsfw(subreddit)
+            }
+        }
+        else {
+            getNsfw(subreddit)
+        }
+
+        async function getNsfw(subreddit) {
+            const msg = await message.channel.send('fetching hentai...')
+            const image = await getImage(subreddit || hentai, 30)
+            msg.delete()
+            message.channel.send(image)
+        }
     }
 }
