@@ -25,11 +25,16 @@ module.exports = {
             getNsfw(subreddit)
         }
 
-        async function getNsfw(subreddit) {
+        async function getNsfw(subreddit, hentai) {
             const msg = await message.channel.send('fetching hentai...')
-            const image = await getImage(subreddit || hentai, 30)
+            let image = await getImage(subreddit || hentai, 30).catch(async e => {
+              console.log(e)
+              let image = await getImage(hentai, 30)
+              message.channel.send("The specified subreddit doesnt exist")
+              message.channel.send(image)
+            })
             msg.delete()
-            message.channel.send(image)
+            message.channel.send(image || "^ Have this instead")
         }
     }
 }

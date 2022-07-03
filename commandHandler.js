@@ -36,13 +36,8 @@ module.exports = (client) => {
         }
 
         var commandName
-        if (message.content.startsWith(config.prefix)) {
+        if (message.content.startsWith(config.prefix) || message.content.endsWith(config.suffix)) {
             commandName = args.shift().toLowerCase()
-        }
-
-        else if (message.content.endsWith(config.suffix)) {
-            commandName = args[0]
-            args = args.slice(1)
         }
 
         if (!commands[commandName]) {
