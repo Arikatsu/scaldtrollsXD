@@ -2,10 +2,14 @@ const bl = require('../db/blacklist.json')
 
 module.exports = {
     callback: (message, ...args) => {
-        var string = args.join(" ")
-        if (new RegExp(bl.join("|")).test(string)) {
-            message.reply("your message contains blacklisted words")}
+        if (!args[0]) return
         else {
-            message.channel.send(string)}
+            var string = args.join(" ")
+            if (new RegExp(bl.join("|")).test(string)) {
+                message.reply("your message contains blacklisted words")}
+            else {
+                message.channel.send(string)
+            }
+        }
     }
 }
