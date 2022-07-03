@@ -50,6 +50,7 @@ module.exports = {
       .setTitle('Database Commands')
       .addFields(
         { name: 'cp', value: 'syntax:  ?<key> <value> `//<key> should be a single word or multpile words joint with special characters like underscores`' },
+        { name: 'cplist', value: 'syntax: ?cplist `//gives a list of all of the keys in the database' },
         { name: 'PRINTING FROM DATABASE', value: 'use "??" at the end or the start, there is no command for it \nexample: ??<key from db> or <key from db>??' }
       )
       .setFooter({ text: 'printing from db is different than using the other commands, to use commands you will still enter the command name at the start no matter if you put "?" at the end or start, meanwhile printing from db is just putting "??" at the start or end with the key name' })
