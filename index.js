@@ -34,7 +34,6 @@ client.on('messageCreate', (message) => {
     }
   }
   else if (message.content.endsWith(config.suffix + config.suffix)) {
-    console.log('yes')
     const args = message.content.slice(0, -2)
     if (!args)
       return

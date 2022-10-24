@@ -13,6 +13,13 @@ module.exports = {
         let argument = keyArray.join(' ')
         let str = valueArray.join(' ')
 
+        if (message.attachments.size > 0) {
+            str = str + '\n\n'
+            message.attachments.map((attachment) => {
+                str = str + attachment.url + '\n'
+            })
+        }
+
         let json = null
 
         try {
