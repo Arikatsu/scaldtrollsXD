@@ -37,7 +37,7 @@ client.on('messageCreate', (message) => {
     console.log('yes')
     const args = message.content.slice(0, -2)
     if (!args)
-      return console.log('yes1')
+      return
     else {
       return message.channel.send({ content: chaos[args] })
     }
