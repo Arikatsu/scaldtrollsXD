@@ -2,12 +2,14 @@
   "dependencies": {
     "@napi-rs/canvas": "^0.1.23",
     "discord.js": "^13.7.0",
-    "express": "^4.18.1",
     "random-reddit": "^2.0.3",
     "undici": "^5.5.1"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "pm2 start --no-daemon index.js --name \"scaldtrollsXD\" --update-env",
+    "test": "node index.js",
+    "stop": "pm2 stop \"scaldtrollsXD\"",
+    "restart": "pm2 restart --no-daemon \"scaldtrollsXD\" --update-env"
   },
   "name": "scaldtrollsxd",
   "version": "1.0.0",
