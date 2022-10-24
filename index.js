@@ -26,18 +26,21 @@ client.on('ready', () => {
 
 client.on('messageCreate', (message) => {
   if (message.content.startsWith(config.prefix + config.prefix)) {
-    const args = message.content.slice(2).split(/ +/)
-    if (!chaos[args[0]])
-      return 
-    else
-      return message.channel.send({ content: chaos[args[0]] })
+    const args = message.content.slice(2)
+    if (!args)
+      return
+    else {
+      return message.channel.send({ content: chaos[args] })
+    }
   }
   else if (message.content.endsWith(config.suffix + config.suffix)) {
-    const args = message.content.slice(0, -2).split(/ +/)
-    if (!chaos[args[0]])
-      return 
-    else
-      return message.channel.send({ content: chaos[args[0]] })
+    console.log('yes')
+    const args = message.content.slice(0, -2)
+    if (!args)
+      return console.log('yes1')
+    else {
+      return message.channel.send({ content: chaos[args] })
+    }
   }
   else return
 })
