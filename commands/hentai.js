@@ -2,9 +2,6 @@ const { getImage } = require('random-reddit')
 
 module.exports = {
     callback: async (message, ...args) => {
-        let hentaisubs = ['hentai', 'GenshinImpactHentai', 'HuTaoNSFW', 'RaidenNSFW', 'HENTAI_GIF']
-        let hentai = hentaisubs[Math.floor(Math.random() * hentaisubs.length)]
-
         let subreddit
         if (args[0]) {
             subreddit = args[0]
@@ -25,7 +22,9 @@ module.exports = {
             getNsfw(subreddit)
         }
 
-        async function getNsfw(subreddit, hentai) {
+        async function getNsfw(subreddit) {
+            const hentaisubs = ['hentai', 'GenshinImpactHentai', 'HuTaoNSFW', 'RaidenNSFW', 'HENTAI_GIF']
+            let hentai = hentaisubs[Math.floor(Math.random() * hentaisubs.length)]
             const msg = await message.channel.send('fetching hentai...')
             let image = await getImage(subreddit || hentai, 30).catch(async e => {
               let image = await getImage(hentai, 30)
