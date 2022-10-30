@@ -49,7 +49,7 @@ module.exports = {
       .setColor('RANDOM')
       .setTitle('Database Commands')
       .addFields(
-        { name: 'cp', value: 'syntax:  ?<key> <value> `//<key> should be a single word or multpile words joint with special characters like underscores`' },
+        { name: 'cp', value: 'syntax:  ?<key> | <value>' `//stores a key-value pair to the database` },
         { name: 'cplist', value: 'syntax: ?cplist `//gives a list of all of the keys in the database' },
         { name: 'PRINTING FROM DATABASE', value: 'use "??" at the end or the start, there is no command for it \nexample: ??<key from db> or <key from db>??' }
       )
@@ -69,7 +69,7 @@ module.exports = {
       .addFields(
         { name: 'echo', value: 'syntax: ?echo <value> `//repeats your message`' },
         { name: '8ball', value: 'syntax: ?8ball <question> `//responds to you depending on the question`' },
-        { name: '8ball pick-', value: 'syntax: ?8ball pick- [array of choices] `//picks something from the choices given`'},
+        { name: '8ball pick-', value: 'syntax: ?8ball pick- [array of choices separated by COMMAS] `//picks something from the choices given`'},
         { name: 'hi', value: 'syntax: ?hi `//wtf was wrong with me when i made that`' }
       )
 
