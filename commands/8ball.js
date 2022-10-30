@@ -6,8 +6,8 @@ module.exports = {
        else {
         if (args[0].toLowerCase() == 'pick-') {
             args = args.slice(1)
-            let choice = args[Math.floor(Math.random() * args.length)];
-            message.reply(choice)
+            args = args.join(' ').split(',')
+            message.channel.send(args[Math.floor(Math.random() * args.length)]) 
         }
         else {
             let reply = replies[Math.floor(Math.random() * replies.length)];
