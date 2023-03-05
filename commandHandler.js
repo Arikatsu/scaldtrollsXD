@@ -23,10 +23,14 @@ module.exports = (client) => {
     console.log(commands)
 
     client.on('messageCreate', (message) => {
-        var args 
+        var args;
+
+        if (!message) return;
+
         if(message.author.bot || !message.channel.permissionsFor(message.guild.me).has("SEND_MESSAGES")){
             return
         }
+
         else if(message.content.startsWith(config.prefix)) {
             args = message.content.slice(1).split(/ +/)
         }
